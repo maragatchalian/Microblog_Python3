@@ -1,4 +1,6 @@
 <html>
+	{% extends "base.html" %}
+	{% block content %}
   	<head>
   		<!--If the view function forgets to define a page 
   		title then instead of showing an empty title 
@@ -9,10 +11,12 @@
     	<title>Welcome to Microblog</title>
     	{% endif %}
   	</head>
+
   	<body>
-      	<h1>Hello, {{ user.nickname }}!</h1>
-      	{% for post in posts %}
-      	<div><p>{{ post.author.nickname }} says: <b>{{ post.body }}</b></p></div>
-      	{% endfor %}
-  	</body>
+    <h1>Hi, {{ user.nickname }}!</h1>
+    {% for post in posts %}
+    <div><p>{{ post.author.nickname }} says: <b>{{ post.body }}</b></p></div>
+	</body>
+    {% endfor %}
+{% endblock %}
 </html>
