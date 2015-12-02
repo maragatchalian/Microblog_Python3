@@ -1,6 +1,13 @@
 <html>
   	<head>
+  		<!--If the view function forgets to define a page 
+  		title then instead of showing an empty title 
+  		the template will provide its own title.-->
+  		{% if title %}
     	<title>{{ title }} - microblog</title>
+    	{% else %}
+    	<title>Welcome to Microblog</title>
+    	{% endif %}
   	</head>
   	<body>
       	<h1>Hello, {{ user.nickname }}!</h1>
